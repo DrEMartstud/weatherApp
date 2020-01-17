@@ -9,10 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-let apiKey = "35f73bd26a806e34af48af53aeaedeff"
+    @IBOutlet weak var backgroundImage: UIImageView!
+    let apiKey = "35f73bd26a806e34af48af53aeaedeff"
 let cityName = "Kaliningrad"
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath
+        let overlay = CAShapeLayer()
+        overlay.path = path
+        overlay.fillColor = UIColor.white.cgColor
+        overlay.shouldRasterize = true
+        backgroundImage.layer.mask = overlay
     }
 //    let urlString = "http://api.weatherstack.com/current?access_key=35f73bd26a806e34af48af53aeaedeff&query=Kaliningrad"
 //    //let urlString = "http://api.weatherstack.com/current?access_key=\(apiKey)&query=\(cityName)"
