@@ -32,7 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39L-gY-aOS">
-                                        <rect key="frame" x="346.5" y="17" width="19.5" height="18.5"/>
+                                        <rect key="frame" x="346.5" y="17.666666666666664" width="19.5" height="17.999999999999993"/>
                                         <state key="normal" backgroundImage="xmark.square" catalog="system"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coordinates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jnq-PP-3hV">
@@ -313,7 +313,9 @@
                                 <constraints>
                                     <constraint firstItem="2Ro-4J-268" firstAttribute="top" secondItem="Lq4-mm-Imz" secondAttribute="bottom" constant="8" id="09E-KK-JIU"/>
                                     <constraint firstItem="Lq4-mm-Imz" firstAttribute="top" secondItem="IxY-A5-xSf" secondAttribute="top" id="Elt-Kb-T8h"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Lq4-mm-Imz" secondAttribute="trailing" constant="350" id="FCE-mG-yjx"/>
                                     <constraint firstAttribute="width" secondItem="IxY-A5-xSf" secondAttribute="height" multiplier="5:1" id="UlT-Lz-0aE"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="2Ro-4J-268" secondAttribute="trailing" constant="296" id="cfk-e7-ggp"/>
                                     <constraint firstItem="2Ro-4J-268" firstAttribute="leading" secondItem="IxY-A5-xSf" secondAttribute="leading" constant="16" id="sRm-3g-TIN"/>
                                     <constraint firstItem="Lq4-mm-Imz" firstAttribute="leading" secondItem="IxY-A5-xSf" secondAttribute="leading" constant="16" id="tZJ-Oj-gTI"/>
                                 </constraints>
