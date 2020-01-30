@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var weatherStateIcon: UIImageView!
     let apiKey = "35f73bd26a806e34af48af53aeaedeff"
-let cityName = "Kaliningrad"
+    let cityName = "Kaliningrad"
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherStateIcon.image = WeatherState.sunAndCloud
     }
     override func viewWillAppear(_ animated: Bool) {
         let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath
