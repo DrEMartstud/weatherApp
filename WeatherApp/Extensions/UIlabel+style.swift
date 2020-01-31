@@ -14,3 +14,4 @@ extension UILabel {
         self.textColor = style.color
     }
 }
+

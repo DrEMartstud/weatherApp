@@ -11,8 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var weatherStateIcon: UIImageView!
-    let apiKey = "35f73bd26a806e34af48af53aeaedeff"
-    let cityName = "Kaliningrad"
+    
+    @IBOutlet private var secondaryLabel: [UILabel]! { didSet {
+    
+        }}
+    @IBOutlet private  var mainLabel: [UILabel]! { didSet {
+        
+        }}
+    
+    
+    
+    
+//    let apiKey = "35f73bd26a806e34af48af53aeaedeff"
+//    let cityName = "Kaliningrad"
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherStateIcon.image = WeatherState.sunAndCloud

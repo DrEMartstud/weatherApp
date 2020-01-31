@@ -9,12 +9,7 @@
 import UIKit
 
 class SearchView:UIView {
-
-    var cornerRadius: CGFloat = 0.5 {
-         didSet {
-             self.layer.cornerRadius = cornerRadius
-         }
-     }
+    
     @IBOutlet var titleLabel: UILabel! {
           didSet {
              titleLabel.set(Font.h1)
@@ -25,4 +20,6 @@ class SearchView:UIView {
              descriptionLabel.set(Font.body)
          }
      }
+   
+    
 }

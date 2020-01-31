@@ -45,7 +45,7 @@
                                         <rect key="frame" x="16" y="96" width="350" height="56"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AA-5X-F1I">
-                                                <rect key="frame" x="125" y="13" width="100" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
                                                 <state key="normal" title="Show Weather">
                                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -57,8 +57,12 @@
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstItem="9AA-5X-F1I" firstAttribute="centerX" secondItem="kj9-pU-h5b" secondAttribute="centerX" id="1p2-P4-xsg"/>
+                                            <constraint firstItem="9AA-5X-F1I" firstAttribute="leading" secondItem="kj9-pU-h5b" secondAttribute="leading" id="1rf-Kw-UmE"/>
+                                            <constraint firstAttribute="bottom" secondItem="9AA-5X-F1I" secondAttribute="bottom" id="8Nq-uU-kLm"/>
+                                            <constraint firstAttribute="trailing" secondItem="9AA-5X-F1I" secondAttribute="trailing" id="Fmp-yL-utQ"/>
                                             <constraint firstItem="9AA-5X-F1I" firstAttribute="centerY" secondItem="kj9-pU-h5b" secondAttribute="centerY" id="X2w-Eq-Jf6"/>
                                             <constraint firstAttribute="height" constant="56" id="kyi-LI-aeQ"/>
+                                            <constraint firstItem="9AA-5X-F1I" firstAttribute="top" secondItem="kj9-pU-h5b" secondAttribute="top" id="ni0-c7-SPx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -99,6 +103,10 @@
                         <viewLayoutGuide key="safeArea" id="S1n-X6-4lX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Global Weather" id="yhw-5f-dH8"/>
+                    <connections>
+                        <outlet property="SearchView" destination="pn6-QJ-dE8" id="uLl-Dm-RI4"/>
+                        <outlet property="showWeatherViewButton" destination="kj9-pU-h5b" id="xoG-Kd-eiS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwl-yB-Jbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,7 +319,15 @@
                     <navigationItem key="navigationItem" id="RMp-3p-ijg"/>
                     <connections>
                         <outlet property="backgroundImage" destination="IN6-4o-ROf" id="46p-5J-lT5"/>
+                        <outlet property="mainLabel" destination="dgS-Xa-Lcq" id="0C7-ab-b1Q"/>
+                        <outlet property="secondaryLabel" destination="kcz-WN-MTy" id="laG-Py-kco"/>
                         <outlet property="weatherStateIcon" destination="SMY-hW-3tQ" id="Mjo-NQ-mxZ"/>
+                        <outletCollection property="secondaryLabel" destination="J4b-c1-ACX" collectionClass="NSMutableArray" id="AAR-Yg-PGu"/>
+                        <outletCollection property="secondaryLabel" destination="f4Q-Pi-xPr" collectionClass="NSMutableArray" id="8Sd-u9-jjL"/>
+                        <outletCollection property="mainLabel" destination="dgS-Xa-Lcq" collectionClass="NSMutableArray" id="I4r-3k-bRI"/>
+                        <outletCollection property="mainLabel" destination="kZh-DK-g3v" collectionClass="NSMutableArray" id="aac-mL-aNz"/>
+                        <outletCollection property="mainLabel" destination="Afu-7I-dM2" collectionClass="NSMutableArray" id="7AV-xW-KNz"/>
+                        <outletCollection property="mainLabel" destination="Ibc-Dc-HgD" collectionClass="NSMutableArray" id="81Y-kK-O74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqt-OW-rPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
