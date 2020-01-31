@@ -319,15 +319,7 @@
                     <navigationItem key="navigationItem" id="RMp-3p-ijg"/>
                     <connections>
                         <outlet property="backgroundImage" destination="IN6-4o-ROf" id="46p-5J-lT5"/>
-                        <outlet property="mainLabel" destination="dgS-Xa-Lcq" id="0C7-ab-b1Q"/>
-                        <outlet property="secondaryLabel" destination="kcz-WN-MTy" id="laG-Py-kco"/>
                         <outlet property="weatherStateIcon" destination="SMY-hW-3tQ" id="Mjo-NQ-mxZ"/>
-                        <outletCollection property="secondaryLabel" destination="J4b-c1-ACX" collectionClass="NSMutableArray" id="AAR-Yg-PGu"/>
-                        <outletCollection property="secondaryLabel" destination="f4Q-Pi-xPr" collectionClass="NSMutableArray" id="8Sd-u9-jjL"/>
-                        <outletCollection property="mainLabel" destination="dgS-Xa-Lcq" collectionClass="NSMutableArray" id="I4r-3k-bRI"/>
-                        <outletCollection property="mainLabel" destination="kZh-DK-g3v" collectionClass="NSMutableArray" id="aac-mL-aNz"/>
-                        <outletCollection property="mainLabel" destination="Afu-7I-dM2" collectionClass="NSMutableArray" id="7AV-xW-KNz"/>
-                        <outletCollection property="mainLabel" destination="Ibc-Dc-HgD" collectionClass="NSMutableArray" id="81Y-kK-O74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqt-OW-rPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

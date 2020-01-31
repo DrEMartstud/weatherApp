@@ -12,12 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var weatherStateIcon: UIImageView!
     
-    @IBOutlet private var secondaryLabel: [UILabel]! { didSet {
-    
-        }}
-    @IBOutlet private  var mainLabel: [UILabel]! { didSet {
-        
-        }}
+//    @IBOutlet private var secondaryLabel: [UILabel]!
+//    @IBOutlet private  var mainLabel: [UILabel]! 
     
     
     
