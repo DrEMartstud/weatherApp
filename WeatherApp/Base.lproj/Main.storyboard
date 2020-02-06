@@ -319,7 +319,13 @@
                     <navigationItem key="navigationItem" id="RMp-3p-ijg"/>
                     <connections>
                         <outlet property="backgroundImage" destination="IN6-4o-ROf" id="46p-5J-lT5"/>
+                        <outlet property="cityNameLabel" destination="Ibc-Dc-HgD" id="gRA-M6-Ih4"/>
+                        <outlet property="humidityPercentageLabel" destination="dgS-Xa-Lcq" id="tej-bX-DUR"/>
+                        <outlet property="pressureMMHGLabel" destination="Afu-7I-dM2" id="Qqg-sD-HjZ"/>
+                        <outlet property="temperatureLabel" destination="cMm-EZ-l5S" id="AiM-eh-apT"/>
                         <outlet property="weatherStateIcon" destination="SMY-hW-3tQ" id="Mjo-NQ-mxZ"/>
+                        <outlet property="weatherStateLabel" destination="LFx-fF-oWs" id="vHb-jP-8YP"/>
+                        <outlet property="windMSLabel" destination="kZh-DK-g3v" id="9by-Mc-FmD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqt-OW-rPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -20,6 +20,8 @@
 		DC3C46C923E4BEBB0059FDA8 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C423E4BEBB0059FDA8 /* FontStyle.swift */; };
 		DC3C46CA23E4BEBB0059FDA8 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C523E4BEBB0059FDA8 /* Font.swift */; };
 		DC3C46CC23E4C7580059FDA8 /* SearchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */; };
+		DC52C71223EB55A400E1FCF9 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */; };
+		DC52C71423EB5A2700E1FCF9 /* setBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52C71323EB5A2700E1FCF9 /* setBackgroundImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		DC3C46C423E4BEBB0059FDA8 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		DC3C46C523E4BEBB0059FDA8 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMenuViewController.swift; sourceTree = "<group>"; };
+		DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImages.swift; sourceTree = "<group>"; };
+		DC52C71323EB5A2700E1FCF9 /* setBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setBackgroundImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +98,12 @@
 			isa = PBXGroup;
 			children = (
 				DC3253C723E3775700D23A3A /* Icons.swift */,
-				DC3C46C523E4BEBB0059FDA8 /* Font.swift */,
+				DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */,
 				DC3C46C323E4BEBB0059FDA8 /* FontColor.swift */,
 				DC3C46C423E4BEBB0059FDA8 /* FontStyle.swift */,
+				DC3C46C523E4BEBB0059FDA8 /* Font.swift */,
 				DC3C46C123E4BEBA0059FDA8 /* UIlabel+style.swift */,
+				DC52C71323EB5A2700E1FCF9 /* setBackgroundImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,7 +199,9 @@
 			files = (
 				DC3253CA23E38A0D00D23A3A /* SceneDelegate.swift in Sources */,
 				DC3C46CA23E4BEBB0059FDA8 /* Font.swift in Sources */,
+				DC52C71423EB5A2700E1FCF9 /* setBackgroundImage.swift in Sources */,
 				38D1930E23A930730078F1C2 /* ViewController.swift in Sources */,
+				DC52C71223EB55A400E1FCF9 /* BackgroundImages.swift in Sources */,
 				3858D4DD23A5636100341EDD /* AppDelegate.swift in Sources */,
 				DC3C46C923E4BEBB0059FDA8 /* FontStyle.swift in Sources */,
 				DC3253C823E3775700D23A3A /* Icons.swift in Sources */,
