@@ -13,7 +13,6 @@
 		3858D4E923A5636300341EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E723A5636300341EDD /* LaunchScreen.storyboard */; };
 		38D1930E23A930730078F1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1930D23A930730078F1C2 /* ViewController.swift */; };
 		DC3253CA23E38A0D00D23A3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3253C923E38A0D00D23A3A /* SceneDelegate.swift */; };
-		DC3C46BD23E4BA960059FDA8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46BC23E4BA960059FDA8 /* SearchView.swift */; };
 		DC3C46C623E4BEBB0059FDA8 /* UIlabel+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C123E4BEBA0059FDA8 /* UIlabel+style.swift */; };
 		DC3C46C823E4BEBB0059FDA8 /* FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C323E4BEBB0059FDA8 /* FontColor.swift */; };
 		DC3C46C923E4BEBB0059FDA8 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C423E4BEBB0059FDA8 /* FontStyle.swift */; };
@@ -21,6 +20,7 @@
 		DC3C46CC23E4C7580059FDA8 /* SearchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */; };
 		DC3E5D9C23F069460053EAD0 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E5D9B23F069450053EAD0 /* Icons.swift */; };
 		DC52C71223EB55A400E1FCF9 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */; };
+		DC98C68723F083A200EBE718 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC98C68623F083A200EBE718 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		3858D4EA23A5636300341EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D1930D23A930730078F1C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC3253C923E38A0D00D23A3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC3C46BC23E4BA960059FDA8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DC3C46C123E4BEBA0059FDA8 /* UIlabel+style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIlabel+style.swift"; sourceTree = "<group>"; };
 		DC3C46C323E4BEBB0059FDA8 /* FontColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontColor.swift; sourceTree = "<group>"; };
 		DC3C46C423E4BEBB0059FDA8 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMenuViewController.swift; sourceTree = "<group>"; };
 		DC3E5D9B23F069450053EAD0 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImages.swift; sourceTree = "<group>"; };
+		DC98C68623F083A200EBE718 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +116,9 @@
 		38D1930C23A9304B0078F1C2 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				DC98C68623F083A200EBE718 /* SearchView.swift */,
 				38D1930D23A930730078F1C2 /* ViewController.swift */,
 				DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */,
-				DC3C46BC23E4BA960059FDA8 /* SearchView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 				DC3C46C923E4BEBB0059FDA8 /* FontStyle.swift in Sources */,
 				DC3C46C823E4BEBB0059FDA8 /* FontColor.swift in Sources */,
 				DC3C46CC23E4C7580059FDA8 /* SearchMenuViewController.swift in Sources */,
-				DC3C46BD23E4BA960059FDA8 /* SearchView.swift in Sources */,
 				DC3C46C623E4BEBB0059FDA8 /* UIlabel+style.swift in Sources */,
+				DC98C68723F083A200EBE718 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
