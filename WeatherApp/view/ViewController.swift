@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+//MARK:- Outlets
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var weatherStateIcon: UIImageView!
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     
 //    let apiKey = "35f73bd26a806e34af48af53aeaedeff"
 //    let cityName = "Kaliningrad"
+//MARK:- viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherStateIcon.image = WeatherState.snow
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
         overlay.shouldRasterize = true
         backgroundImage.layer.mask = overlay
     }
+//MARK:-
+    
 //    let urlString = "http://api.weatherstack.com/current?access_key=35f73bd26a806e34af48af53aeaedeff&query=Kaliningrad"
 //    //let urlString = "http://api.weatherstack.com/current?access_key=\(apiKey)&query=\(cityName)"
 //          let url = URL(string: urlString)

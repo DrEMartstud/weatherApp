@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-MI-frY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-MI-frY">
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-Mc-OqE">
@@ -104,7 +104,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Global Weather" id="yhw-5f-dH8"/>
                     <connections>
-                        <outlet property="SearchView" destination="pn6-QJ-dE8" id="uLl-Dm-RI4"/>
+                        <outlet property="mapView" destination="ASX-MI-frY" id="b8C-xi-7Ul"/>
+                        <outlet property="searchBar" destination="Pdf-Mc-OqE" id="Znu-nH-7J8"/>
+                        <outlet property="searchView" destination="pn6-QJ-dE8" id="lPT-gD-v7a"/>
                         <outlet property="showWeatherViewButton" destination="kj9-pU-h5b" id="xoG-Kd-eiS"/>
                     </connections>
                 </viewController>

@@ -16,16 +16,6 @@ struct BackGroundImage {
     static let snow = UIImage(named: "snowImage.jpg")
     static let sunAndCloud = UIImage(named: "sunAndCloudImage.jpg")
 }
-//MARK:- extension UIImageView
-extension UIImageView {
-//    func set(_ WeatherState: BackGroundImage) {
-//        self.
-//    }
-}
 
-//extension UILabel {
-//    func set(_ style: FontStyleData) {
-//        self.font = style.font
-//        self.textColor = style.color
-//    }
-//}
+//backgroundImage.image = BackGroundImage.snow
+

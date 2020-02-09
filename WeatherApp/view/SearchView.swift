@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchView:UIView {
-    
     @IBOutlet var titleLabel: UILabel! {
           didSet {
              titleLabel.set(Font.h1)
@@ -20,6 +19,4 @@ class SearchView:UIView {
              descriptionLabel.set(Font.body)
          }
      }
-   
-    
 }
