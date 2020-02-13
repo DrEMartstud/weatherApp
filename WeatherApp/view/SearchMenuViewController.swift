@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 class SearchMenuViewController: UIViewController {
 //MARK:- Outlets
-    @IBOutlet weak var debugLabel: UILabel!
     @IBOutlet weak var searchView: SearchView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
@@ -36,25 +35,32 @@ class SearchMenuViewController: UIViewController {
         beautifyView()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         view.addGestureRecognizer(tapGesture)
-        
     }
-    
-    
 //MARK:- Setup Location manager
     func setupLocationManager() {
         locationManager.delegate = self //запускается делегат в extension
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
-    
-//MARK:- centerViewOnUserLocation
+   
+//MARK:- Open and close SearchView
+    func openSearchView() {
+        searchView.isHidden = false
+    }
+    func closeSearchView() {
+        searchView.isHidden = true
+    }
+//MARK:- Center View On Locaion
     func centerViewOnUserLocation() {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapView.setRegion(region, animated: true)
+//            descriptionLabel.text = "\(region.center)"
         }
     }
     @IBAction func centerMapButon(_ sender: UIButton) {
         centerViewOnUserLocation()
+        
+        openSearchView()
     }
     //MARK:- Check Location Services
     func checkLocationServices() {
@@ -66,6 +72,10 @@ class SearchMenuViewController: UIViewController {
         }
     }
     
+//MARK:- Close view
+    @IBAction func xCloseView(_ sender: UIButton) {
+        closeSearchView()
+    }
 //MARK:- checkLocationAuthorization
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
@@ -123,11 +133,10 @@ extension SearchMenuViewController: CLLocationManagerDelegate {
 //        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
 //        mapView.setRegion(region, animated: true)
 //    }
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        checkLocationAuthorization()
-    }
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        checkLocationAuthorization()
+//    }
 }
-
 extension SearchMenuViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
@@ -154,7 +163,7 @@ extension SearchMenuViewController: MKMapViewDelegate {
             let coordinates = placemark.location ?? nil
             DispatchQueue.main.async {
                 self.titleLabel.text = "\(cityName)"
-                self.descriptionLabel.text = "\(coordinates)"
+                self.descriptionLabel.text = "\(String(describing: coordinates))"
             }
         }
     }
