@@ -30,8 +30,9 @@ class ViewController: UIViewController {
 //MARK:- viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherStateIcon.image = WeatherState.snow
-        backgroundImage.image = BackGroundImage.snow
+        weatherStateIcon.image = WeatherState.night
+        backgroundImage.image = BackGroundImage.night
+        cityNameLabel.text = CityInfo.cityName
     }
     override func viewWillAppear(_ animated: Bool) {
         let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath

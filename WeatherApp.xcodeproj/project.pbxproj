@@ -21,6 +21,7 @@
 		DC3E5D9C23F069460053EAD0 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E5D9B23F069450053EAD0 /* Icons.swift */; };
 		DC52C71223EB55A400E1FCF9 /* BackgroundImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */; };
 		DC98C68723F083A200EBE718 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC98C68623F083A200EBE718 /* SearchView.swift */; };
+		DCB3ABB523F9D62400BAE709 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB3ABB423F9D62400BAE709 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DC3E5D9B23F069450053EAD0 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		DC52C71123EB55A400E1FCF9 /* BackgroundImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImages.swift; sourceTree = "<group>"; };
 		DC98C68623F083A200EBE718 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DCB3ABB423F9D62400BAE709 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		3858D4DB23A5636100341EDD /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				DCB3ABB323F9D60D00BAE709 /* Data */,
 				3858D4E223A5636100341EDD /* Main.storyboard */,
 				3858D4E723A5636300341EDD /* LaunchScreen.storyboard */,
 				38D1930C23A9304B0078F1C2 /* view */,
@@ -121,6 +124,14 @@
 				DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		DCB3ABB323F9D60D00BAE709 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DCB3ABB423F9D62400BAE709 /* UserDefaults.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				DC3E5D9C23F069460053EAD0 /* Icons.swift in Sources */,
 				DC3C46C923E4BEBB0059FDA8 /* FontStyle.swift in Sources */,
 				DC3C46C823E4BEBB0059FDA8 /* FontColor.swift in Sources */,
+				DCB3ABB523F9D62400BAE709 /* UserDefaults.swift in Sources */,
 				DC3C46CC23E4C7580059FDA8 /* SearchMenuViewController.swift in Sources */,
 				DC3C46C623E4BEBB0059FDA8 /* UIlabel+style.swift in Sources */,
 				DC98C68723F083A200EBE718 /* SearchView.swift in Sources */,

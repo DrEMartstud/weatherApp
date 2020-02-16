@@ -38,15 +38,18 @@ class SearchMenuViewController: UIViewController {
     }
 //MARK:- Setup Location manager
     func setupLocationManager() {
+        mapView.delegate = self
         locationManager.delegate = self //запускается делегат в extension
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
    
 //MARK:- Open and close SearchView
     func openSearchView() {
+        guard searchView.isHidden else { return }
         searchView.isHidden = false
     }
     func closeSearchView() {
+        guard searchView.isHidden == false else { return }
         searchView.isHidden = true
     }
 //MARK:- Center View On Locaion
@@ -54,7 +57,6 @@ class SearchMenuViewController: UIViewController {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             mapView.setRegion(region, animated: true)
-//            descriptionLabel.text = "\(region.center)"
         }
     }
     @IBAction func centerMapButon(_ sender: UIButton) {
@@ -128,14 +130,14 @@ class SearchMenuViewController: UIViewController {
 }
 //MARK:- Extensions
 extension SearchMenuViewController: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.last else { return }
-//        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-//        mapView.setRegion(region, animated: true)
-//    }
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        checkLocationAuthorization()
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
 }
 extension SearchMenuViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -159,16 +161,20 @@ extension SearchMenuViewController: MKMapViewDelegate {
             }
             
            // let streetName = placemark.subThoroughfare ?? " "
-            let cityName = placemark.locality ?? "cityName"
-            let coordinates = placemark.location ?? nil
+            let cityName = placemark.locality ?? ""
+            CityInfo.cityName = cityName
+            let latitude = placemark.location!.coordinate.latitude
+            let longitude = placemark.location!.coordinate.longitude
+            
             DispatchQueue.main.async {
                 self.titleLabel.text = "\(cityName)"
-                self.descriptionLabel.text = "\(String(describing: coordinates))"
+                self.descriptionLabel.text = "\(String(latitude)) \(String(longitude))"
+                
             }
         }
     }
 }
-
+	
 
 
 
