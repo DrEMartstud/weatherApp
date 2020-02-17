@@ -28,6 +28,8 @@ class SearchMenuViewController: UIViewController {
     let locationManager = CLLocationManager()
     let regionInMeters:Double = 10000
     var previousLocation: CLLocation?
+    var cityNameForRequest: String?
+    var previousCityNameForRequest: String?
 //MARK:- ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,35 +126,45 @@ class SearchMenuViewController: UIViewController {
         showWeatherViewButton.layer.borderColor = UIColor.systemBlue.cgColor
         showWeatherViewButton.layer.borderWidth = 1
     }
-//MARK:- closeKeyboard
-    @objc func closeKeyboard() {
-    view.endEditing(true)
-    }
-}
-
-
-
-//MARK:- Extensions
-
-
-
-//MARK:- Searchbar delegate
-extension SearchMenuViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let urlString = "http://api.weatherstack.com/current?access_key=f4919842e423082102ed69df019dca83&query=\(searchBar.text!)"
+//MARK:- Request weather
+    func requestWeather(forCity: String) {
+        guard forCity != previousCityNameForRequest else { return }
+        previousCityNameForRequest = forCity
+        let key = "f4919842e423082102ed69df019dca83"
+        let urlString = "http://api.weatherstack.com/current?access_key=\(key)&query=\(forCity)"
         guard let url = URL(string: urlString) else { return }
         
         var locationName: String?
         var temperature: Double?
+        var weather_code: Int?
+        var weather_descriptions: String?
+        var humidity: Double?
+        var wind_speed: Double?
+        var pressure: Double?
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                 
                 if let location = json["location"] {
                     locationName = location["name"] as? String
+                    CityInfo.cityName = locationName!
                 }
                 if let current = json["current"] {
                     temperature = current["temperature"] as? Double
+                    weather_code = current["weather_code"] as? Int
+                    weather_descriptions = current["weather_descriptions"] as? String
+                    wind_speed = current["wind_speed"] as? Double
+                    humidity = current["humidity"] as? Double
+                    wind_speed = current["wind_speed"] as? Double
+                    pressure = current["pressure"] as? Double
+                    
+                    CityInfo.temperature = temperature ?? 0.0
+                    CityInfo.weather_code = weather_code ?? 0
+                    CityInfo.weather_descriptions = weather_descriptions ?? ""
+                    CityInfo.humidity = humidity ?? 0.0
+                    CityInfo.wind_speed = wind_speed ?? 0.0
+                    CityInfo.pressure = pressure ?? 0.0
                 }
             }
             catch let jsonError {
@@ -160,6 +172,33 @@ extension SearchMenuViewController: UISearchBarDelegate {
             }
         }
         task.resume()
+        
+    }
+
+//MARK:- Request Weather button
+    
+    @IBAction func WeatherRequest(_ sender: Any) {
+
+        requestWeather(forCity: cityNameForRequest ?? "")
+    
+    }
+    
+    //MARK:- closeKeyboard
+    @objc func closeKeyboard() {
+    view.endEditing(true)
+    }
+}
+///
+///
+///
+//MARK:- Extensions
+///
+///
+///
+//MARK:- Searchbar delegate
+extension SearchMenuViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
     }
 }
 
@@ -201,11 +240,10 @@ extension SearchMenuViewController: MKMapViewDelegate {
             CityInfo.cityName = cityName
             let latitude = placemark.location!.coordinate.latitude
             let longitude = placemark.location!.coordinate.longitude
-            
+            self.cityNameForRequest = cityName
             DispatchQueue.main.async {
                 self.titleLabel.text = "\(cityName)"
                 self.descriptionLabel.text = "\(String(latitude)) \(String(longitude))"
-                
             }
         }
     }

@@ -18,15 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityPercentageLabel: UILabel!
     @IBOutlet weak var windMSLabel: UILabel!
     @IBOutlet weak var pressureMMHGLabel: UILabel!
-    
-//    @IBOutlet private var secondaryLabel: [UILabel]!
-//    @IBOutlet private  var mainLabel: [UILabel]! 
-    
-    
-    
-    
-//    let apiKey = "35f73bd26a806e34af48af53aeaedeff"
-//    let cityName = "Kaliningrad"
 //MARK:- viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +33,6 @@ class ViewController: UIViewController {
             self.setWeatherInfo()
         }
     }
-    
 //MARK:- Roundefy Image
     func roundefyImage() {
         let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath
@@ -54,29 +44,16 @@ class ViewController: UIViewController {
     }
 //MARK:- Set weather info
     func setWeatherInfo(){
-        let weatherState = WeatherState.night
-        let weatherImage = BackGroundImage.night
-        weatherStateIcon.image = weatherState
-        backgroundImage.image = weatherImage
+//        let weatherState = WeatherState.night
+//        let weatherImage = BackGroundImage.night
+//        weatherStateIcon.image = weatherState
+//        backgroundImage.image = weatherImage
         cityNameLabel.text = CityInfo.cityName
+        weatherStateLabel.text = "\(CityInfo.weather_descriptions)"
+        
+            temperatureLabel.text = "\(CityInfo.temperature)"
+        humidityPercentageLabel.text = "\(CityInfo.humidity)%"
+        windMSLabel.text = "\(CityInfo.wind_speed) m/s"
+        pressureMMHGLabel.text = "\(CityInfo.pressure) mm Hg"
     }
-//     "35f73bd26a806e34af48af53aeaedeff Kaliningrad"
-//    //let urlString = "http://api.weatherstack.com/current?access_key=\(apiKey)&query=\(cityName)"
-
-//          let session = URLSession.shared
-//    session.dataTask(with: url) { (data, response, error) in
-//    if let response = response {
-//        print(response)
-//        }
-//    guard let data = data else {return}
-//    print(data)
-//
-//    do {
-//    let json = try JSONSerialization.jsonObject(with: data, options: [])
-//
-//    }
-//    }
-//
-//    session.resume()
-
 }

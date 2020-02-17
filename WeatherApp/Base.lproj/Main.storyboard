@@ -61,7 +61,8 @@
                                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="ace-VM-571" kind="show" id="BaV-T9-dcT"/>
+                                                    <action selector="WeatherRequest:" destination="hIO-cC-jQI" eventType="touchUpInside" id="wZU-Vc-DZ4"/>
+                                                    <segue destination="ace-VM-571" kind="show" id="PFH-kU-Nsf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
