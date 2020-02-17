@@ -31,6 +31,7 @@ class SearchMenuViewController: UIViewController {
 //MARK:- ViewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         checkLocationServices()
         beautifyView()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
@@ -128,7 +129,41 @@ class SearchMenuViewController: UIViewController {
     view.endEditing(true)
     }
 }
+
+
+
 //MARK:- Extensions
+
+
+
+//MARK:- Searchbar delegate
+extension SearchMenuViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let urlString = "http://api.weatherstack.com/current?access_key=f4919842e423082102ed69df019dca83&query=\(searchBar.text!)"
+        guard let url = URL(string: urlString) else { return }
+        
+        var locationName: String?
+        var temperature: Double?
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
+                
+                if let location = json["location"] {
+                    locationName = location["name"] as? String
+                }
+                if let current = json["current"] {
+                    temperature = current["temperature"] as? Double
+                }
+            }
+            catch let jsonError {
+                print(jsonError)
+            }
+        }
+        task.resume()
+    }
+}
+
+//MARK:- CLLocationManagerDelegate
 extension SearchMenuViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
@@ -139,6 +174,7 @@ extension SearchMenuViewController: CLLocationManagerDelegate {
         checkLocationAuthorization()
     }
 }
+//MARK:- mapView moved
 extension SearchMenuViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)

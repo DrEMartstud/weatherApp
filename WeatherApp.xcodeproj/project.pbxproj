@@ -12,6 +12,8 @@
 		3858D4E623A5636300341EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E523A5636300341EDD /* Assets.xcassets */; };
 		3858D4E923A5636300341EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E723A5636300341EDD /* LaunchScreen.storyboard */; };
 		38D1930E23A930730078F1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1930D23A930730078F1C2 /* ViewController.swift */; };
+		DC1CD1EE23FB24AE00946654 /* JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1CD1ED23FB24AE00946654 /* JSON.json */; };
+		DC1CD1F123FB2B4C00946654 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1CD1F023FB2B4C00946654 /* MapKit.framework */; };
 		DC3253CA23E38A0D00D23A3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3253C923E38A0D00D23A3A /* SceneDelegate.swift */; };
 		DC3C46C623E4BEBB0059FDA8 /* UIlabel+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C123E4BEBA0059FDA8 /* UIlabel+style.swift */; };
 		DC3C46C823E4BEBB0059FDA8 /* FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3C46C323E4BEBB0059FDA8 /* FontColor.swift */; };
@@ -32,6 +34,8 @@
 		3858D4E823A5636300341EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3858D4EA23A5636300341EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D1930D23A930730078F1C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC1CD1ED23FB24AE00946654 /* JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSON.json; sourceTree = "<group>"; };
+		DC1CD1F023FB2B4C00946654 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC3253C923E38A0D00D23A3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC3C46C123E4BEBA0059FDA8 /* UIlabel+style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIlabel+style.swift"; sourceTree = "<group>"; };
 		DC3C46C323E4BEBB0059FDA8 /* FontColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontColor.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1CD1F123FB2B4C00946654 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +65,7 @@
 			children = (
 				3858D4DB23A5636100341EDD /* WeatherApp */,
 				3858D4DA23A5636100341EDD /* Products */,
+				DC1CD1EF23FB2B4C00946654 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +80,7 @@
 		3858D4DB23A5636100341EDD /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC1CD1EC23FB249B00946654 /* JSON */,
 				DCB3ABB323F9D60D00BAE709 /* Data */,
 				3858D4E223A5636100341EDD /* Main.storyboard */,
 				3858D4E723A5636300341EDD /* LaunchScreen.storyboard */,
@@ -124,6 +131,22 @@
 				DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		DC1CD1EC23FB249B00946654 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DC1CD1ED23FB24AE00946654 /* JSON.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		DC1CD1EF23FB2B4C00946654 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC1CD1F023FB2B4C00946654 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DCB3ABB323F9D60D00BAE709 /* Data */ = {
@@ -195,6 +218,7 @@
 				3858D4E923A5636300341EDD /* LaunchScreen.storyboard in Resources */,
 				3858D4E623A5636300341EDD /* Assets.xcassets in Resources */,
 				3858D4E423A5636100341EDD /* Main.storyboard in Resources */,
+				DC1CD1EE23FB24AE00946654 /* JSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

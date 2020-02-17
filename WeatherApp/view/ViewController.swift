@@ -30,23 +30,39 @@ class ViewController: UIViewController {
 //MARK:- viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherStateIcon.image = WeatherState.night
-        backgroundImage.image = BackGroundImage.night
-        cityNameLabel.text = CityInfo.cityName
+        updateView()
     }
     override func viewWillAppear(_ animated: Bool) {
-        let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath
-        let overlay = CAShapeLayer()
-        overlay.path = path
-        overlay.fillColor = UIColor.white.cgColor
-        overlay.shouldRasterize = true
-        backgroundImage.layer.mask = overlay
+       
     }
-//MARK:-
+//MARK:- Update View
+    func updateView() {
+        DispatchQueue.main.async {
+            self.roundefyImage()
+            self.setWeatherInfo()
+        }
+    }
     
-//    let urlString = "http://api.weatherstack.com/current?access_key=35f73bd26a806e34af48af53aeaedeff&query=Kaliningrad"
+//MARK:- Roundefy Image
+    func roundefyImage() {
+        let path = UIBezierPath(ovalIn: CGRect(x: backgroundImage.bounds.width * 0.4, y: 0, width: backgroundImage.bounds.height, height: backgroundImage.bounds.height)).cgPath
+               let overlay = CAShapeLayer()
+               overlay.path = path
+               overlay.fillColor = UIColor.white.cgColor
+               overlay.shouldRasterize = true
+               backgroundImage.layer.mask = overlay
+    }
+//MARK:- Set weather info
+    func setWeatherInfo(){
+        let weatherState = WeatherState.night
+        let weatherImage = BackGroundImage.night
+        weatherStateIcon.image = weatherState
+        backgroundImage.image = weatherImage
+        cityNameLabel.text = CityInfo.cityName
+    }
+//     "35f73bd26a806e34af48af53aeaedeff Kaliningrad"
 //    //let urlString = "http://api.weatherstack.com/current?access_key=\(apiKey)&query=\(cityName)"
-//          let url = URL(string: urlString)
+
 //          let session = URLSession.shared
 //    session.dataTask(with: url) { (data, response, error) in
 //    if let response = response {
