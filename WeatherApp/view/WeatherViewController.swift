@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 //MARK:- Outlets
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -44,14 +44,33 @@ class ViewController: UIViewController {
     }
 //MARK:- Set weather info
     func setWeatherInfo(){
-//        let weatherState = WeatherState.night
-//        let weatherImage = BackGroundImage.night
-//        weatherStateIcon.image = weatherState
-//        backgroundImage.image = weatherImage
         cityNameLabel.text = CityInfo.cityName
         weatherStateLabel.text = "\(CityInfo.weather_descriptions)"
-        
-            temperatureLabel.text = "\(CityInfo.temperature)"
+        switch CityInfo.weather_code {
+        case 113:
+            weatherStateIcon.image = WeatherState.clearSun
+            backgroundImage.image = BackGroundImage.clearSun
+            weatherStateLabel.text = "Clear Sky"
+        case 176...200:
+            weatherStateIcon.image = WeatherState.rain
+            backgroundImage.image = BackGroundImage.rain
+            weatherStateLabel.text = "Rain"
+        case 248...311:
+            weatherStateIcon.image = WeatherState.rain
+            backgroundImage.image = BackGroundImage.rain
+            weatherStateLabel.text = "Rain"
+        case 227...230:
+            weatherStateIcon.image = WeatherState.snow
+            backgroundImage.image = BackGroundImage.snow
+            weatherStateLabel.text = "Snow"
+        case 116...143:
+            weatherStateIcon.image = WeatherState.sunAndCloud
+            backgroundImage.image = BackGroundImage.sunAndCloud
+            weatherStateLabel.text = "Partly Cloudy"
+        default:
+            print("Default value of weather state got triggered")
+        }
+        temperatureLabel.text = "\(CityInfo.temperature)"
         humidityPercentageLabel.text = "\(CityInfo.humidity)%"
         windMSLabel.text = "\(CityInfo.wind_speed) m/s"
         pressureMMHGLabel.text = "\(CityInfo.pressure) mm Hg"

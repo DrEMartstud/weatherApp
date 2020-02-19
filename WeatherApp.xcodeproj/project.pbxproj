@@ -11,7 +11,7 @@
 		3858D4E423A5636100341EDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E223A5636100341EDD /* Main.storyboard */; };
 		3858D4E623A5636300341EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E523A5636300341EDD /* Assets.xcassets */; };
 		3858D4E923A5636300341EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3858D4E723A5636300341EDD /* LaunchScreen.storyboard */; };
-		38D1930E23A930730078F1C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1930D23A930730078F1C2 /* ViewController.swift */; };
+		38D1930E23A930730078F1C2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D1930D23A930730078F1C2 /* WeatherViewController.swift */; };
 		DC1CD1EE23FB24AE00946654 /* JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = DC1CD1ED23FB24AE00946654 /* JSON.json */; };
 		DC1CD1F123FB2B4C00946654 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1CD1F023FB2B4C00946654 /* MapKit.framework */; };
 		DC1CD1F323FB32FA00946654 /* wwoConditionCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC1CD1F223FB32FA00946654 /* wwoConditionCodes.txt */; };
@@ -35,7 +35,7 @@
 		3858D4E523A5636300341EDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3858D4E823A5636300341EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3858D4EA23A5636300341EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38D1930D23A930730078F1C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38D1930D23A930730078F1C2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		DC1CD1ED23FB24AE00946654 /* JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSON.json; sourceTree = "<group>"; };
 		DC1CD1F023FB2B4C00946654 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DC1CD1F223FB32FA00946654 /* wwoConditionCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wwoConditionCodes.txt; path = "weather-codes/wwoConditionCodes.txt"; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				DC98C68623F083A200EBE718 /* SearchView.swift */,
-				38D1930D23A930730078F1C2 /* ViewController.swift */,
+				38D1930D23A930730078F1C2 /* WeatherViewController.swift */,
 				DC3C46CB23E4C7580059FDA8 /* SearchMenuViewController.swift */,
 			);
 			path = view;
@@ -239,7 +239,7 @@
 			files = (
 				DC3253CA23E38A0D00D23A3A /* SceneDelegate.swift in Sources */,
 				DC3C46CA23E4BEBB0059FDA8 /* Font.swift in Sources */,
-				38D1930E23A930730078F1C2 /* ViewController.swift in Sources */,
+				38D1930E23A930730078F1C2 /* WeatherViewController.swift in Sources */,
 				DC52C71223EB55A400E1FCF9 /* BackgroundImages.swift in Sources */,
 				3858D4DD23A5636100341EDD /* AppDelegate.swift in Sources */,
 				DC3E5D9C23F069460053EAD0 /* Icons.swift in Sources */,

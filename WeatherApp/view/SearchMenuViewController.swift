@@ -39,6 +39,11 @@ class SearchMenuViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
+////MARK:- Transition to next view
+//    func transitionToViewController() {
+//        let newVC = storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+//               navigationController?.pushViewController(newVC, animated: true)
+//    }
 //MARK:- Setup Location manager
     func setupLocationManager() {
         mapView.delegate = self
@@ -64,8 +69,6 @@ class SearchMenuViewController: UIViewController {
     }
     @IBAction func centerMapButon(_ sender: UIButton) {
         centerViewOnUserLocation()
-        
-        openSearchView()
     }
     //MARK:- Check Location Services
     func checkLocationServices() {
@@ -102,7 +105,7 @@ class SearchMenuViewController: UIViewController {
     }
     func startTrackingUserLocation() {
         mapView.showsUserLocation = true
-        centerViewOnUserLocation()
+//        centerViewOnUserLocation()
         locationManager.startUpdatingLocation()
         previousLocation = getCenterLocation(for: mapView)
         //print("PrevLoc: \(previousLocation)")
@@ -153,15 +156,12 @@ class SearchMenuViewController: UIViewController {
                 if let current = json["current"] {
                     temperature = current["temperature"] as? Double
                     weather_code = current["weather_code"] as? Int
-                    weather_descriptions = current["weather_descriptions"] as? String
                     wind_speed = current["wind_speed"] as? Double
                     humidity = current["humidity"] as? Double
                     wind_speed = current["wind_speed"] as? Double
                     pressure = current["pressure"] as? Double
-                    
                     CityInfo.temperature = temperature ?? 0.0
                     CityInfo.weather_code = weather_code ?? 0
-                    CityInfo.weather_descriptions = weather_descriptions ?? ""
                     CityInfo.humidity = humidity ?? 0.0
                     CityInfo.wind_speed = wind_speed ?? 0.0
                     CityInfo.pressure = pressure ?? 0.0
@@ -175,14 +175,16 @@ class SearchMenuViewController: UIViewController {
         
     }
 
-//MARK:- Request Weather button
-    
-    @IBAction func WeatherRequest(_ sender: Any) {
-
+////MARK:- Request Weather button
+//
+//    @IBAction func WeatherRequest(_ sender: Any) {
+//        transitionToViewController()
+//    }
+//MARK:- Show weather view button
+    @IBAction func ShowWeatherViewButton(_ sender: Any) {
         requestWeather(forCity: cityNameForRequest ?? "")
-    
+        openSearchView()
     }
-    
     //MARK:- closeKeyboard
     @objc func closeKeyboard() {
     view.endEditing(true)
@@ -204,11 +206,11 @@ extension SearchMenuViewController: UISearchBarDelegate {
 
 //MARK:- CLLocationManagerDelegate
 extension SearchMenuViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-        mapView.setRegion(region, animated: true)
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let location = locations.last else { return }
+//        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+//
+//    }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
@@ -223,7 +225,7 @@ extension SearchMenuViewController: MKMapViewDelegate {
         guard center.distance(from: previousLocation) > 50 else { return }
        
         self.previousLocation = center
-        
+        closeSearchView()
         geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
             guard let self = self else { return }
             if let _ = error {
